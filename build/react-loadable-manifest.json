@@ -1,0 +1,60 @@
+{
+  "..\\..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
+    "id": "..\\..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error",
+    "files": [
+      "static/chunks/node_modules_next_dist_pages__error_js.js"
+    ]
+  },
+  "..\\components\\desmos_profile\\components\\connections\\index.tsx -> ./components/desktop": {
+    "id": "..\\components\\desmos_profile\\components\\connections\\index.tsx -> ./components/desktop",
+    "files": [
+      "static/chunks/src_components_desmos_profile_components_connections_components_desktop_index_tsx.js"
+    ]
+  },
+  "..\\components\\desmos_profile\\components\\connections\\index.tsx -> ./components/mobile": {
+    "id": "..\\components\\desmos_profile\\components\\connections\\index.tsx -> ./components/mobile",
+    "files": [
+      "static/chunks/src_components_desmos_profile_components_connections_components_mobile_index_tsx.js"
+    ]
+  },
+  "..\\components\\nav\\index.tsx -> ./components/desktop": {
+    "id": "..\\components\\nav\\index.tsx -> ./components/desktop",
+    "files": []
+  },
+  "..\\components\\transactions_list\\index.tsx -> ./components/desktop": {
+    "id": "..\\components\\transactions_list\\index.tsx -> ./components/desktop",
+    "files": [
+      "static/chunks/src_components_transactions_list_components_desktop_index_tsx.js"
+    ]
+  },
+  "..\\components\\transactions_list\\index.tsx -> ./components/mobile": {
+    "id": "..\\components\\transactions_list\\index.tsx -> ./components/mobile",
+    "files": [
+      "static/chunks/src_components_transactions_list_components_mobile_index_tsx.js"
+    ]
+  },
+  "..\\screens\\home\\components\\blocks\\index.tsx -> ./components/desktop": {
+    "id": "..\\screens\\home\\components\\blocks\\index.tsx -> ./components/desktop",
+    "files": [
+      "static/chunks/src_screens_home_components_blocks_components_desktop_index_tsx.js"
+    ]
+  },
+  "..\\screens\\home\\components\\blocks\\index.tsx -> ./components/mobile": {
+    "id": "..\\screens\\home\\components\\blocks\\index.tsx -> ./components/mobile",
+    "files": [
+      "static/chunks/src_screens_home_components_blocks_components_mobile_index_tsx.js"
+    ]
+  },
+  "..\\screens\\home\\components\\transactions\\index.tsx -> ./components/desktop": {
+    "id": "..\\screens\\home\\components\\transactions\\index.tsx -> ./components/desktop",
+    "files": [
+      "static/chunks/src_screens_home_components_transactions_components_desktop_index_tsx.js"
+    ]
+  },
+  "..\\screens\\home\\components\\transactions\\index.tsx -> ./components/mobile": {
+    "id": "..\\screens\\home\\components\\transactions\\index.tsx -> ./components/mobile",
+    "files": [
+      "static/chunks/src_screens_home_components_transactions_components_mobile_index_tsx.js"
+    ]
+  }
+}

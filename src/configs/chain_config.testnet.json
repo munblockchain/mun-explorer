@@ -1,0 +1,32 @@
+{
+  "title": "MUN Testnet Block Explorer",
+  "network": "testmun",
+  "icon": "https://raw.githubusercontent.com/vigorousdeveloper/explorer_assets/main/icon.svg?sanitize=true",
+  "logo": {
+    "default": "https://raw.githubusercontent.com/vigorousdeveloper/explorer_assets/main/logo.svg?sanitize=true"
+  },
+  "prefix": {
+    "consensus": "munvalcons",
+    "validator": "munvaloper",
+    "account": "mun"
+  },
+  "genesis": {
+    "time": "2022-07-31T01:41:20.127125301Z",
+    "height": 1
+  },
+  "primaryTokenUnit": "utmun",
+  "votingPowerTokenUnit": "utmun",
+  "tokenUnits": {
+    "utmun": {
+      "display": "utmun",
+      "exponent": 0
+    },
+    "tmun": {
+      "display": "tmun",
+      "exponent": 6
+    }
+  },
+  "extra": {
+    "profile": true
+  }
+}
