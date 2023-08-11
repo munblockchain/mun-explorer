@@ -4,7 +4,7 @@ export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-const defaultOptions =  {}
+const defaultOptions = {}
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -11442,61 +11442,73 @@ export type AccountCommissionQueryVariables = Exact<{
 }>;
 
 
-export type AccountCommissionQuery = { commission?: Maybe<(
+export type AccountCommissionQuery = {
+  commission?: Maybe<(
     { __typename?: 'ActionValidatorCommissionAmount' }
     & Pick<ActionValidatorCommissionAmount, 'coins'>
-  )> };
+  )>
+};
 
 export type AccountWithdrawalAddressQueryVariables = Exact<{
   address: Scalars['String'];
 }>;
 
 
-export type AccountWithdrawalAddressQuery = { withdrawalAddress: (
+export type AccountWithdrawalAddressQuery = {
+  withdrawalAddress: (
     { __typename?: 'ActionAddress' }
     & Pick<ActionAddress, 'address'>
-  ) };
+  )
+};
 
 export type AccountBalancesQueryVariables = Exact<{
   address: Scalars['String'];
 }>;
 
 
-export type AccountBalancesQuery = { accountBalances?: Maybe<(
+export type AccountBalancesQuery = {
+  accountBalances?: Maybe<(
     { __typename?: 'ActionBalance' }
     & Pick<ActionBalance, 'coins'>
-  )> };
+  )>
+};
 
 export type AccountDelegationBalanceQueryVariables = Exact<{
   address: Scalars['String'];
 }>;
 
 
-export type AccountDelegationBalanceQuery = { delegationBalance?: Maybe<(
+export type AccountDelegationBalanceQuery = {
+  delegationBalance?: Maybe<(
     { __typename?: 'ActionBalance' }
     & Pick<ActionBalance, 'coins'>
-  )> };
+  )>
+};
 
 export type AccountUnbondingBalanceQueryVariables = Exact<{
   address: Scalars['String'];
 }>;
 
 
-export type AccountUnbondingBalanceQuery = { unbondingBalance?: Maybe<(
+export type AccountUnbondingBalanceQuery = {
+  unbondingBalance?: Maybe<(
     { __typename?: 'ActionBalance' }
     & Pick<ActionBalance, 'coins'>
-  )> };
+  )>
+};
 
 export type AccountDelegationRewardsQueryVariables = Exact<{
   address: Scalars['String'];
 }>;
 
 
-export type AccountDelegationRewardsQuery = { delegationRewards?: Maybe<Array<Maybe<(
+export type AccountDelegationRewardsQuery = {
+  delegationRewards?: Maybe<Array<Maybe<(
     { __typename?: 'ActionDelegationReward' }
     & Pick<ActionDelegationReward, 'coins'>
     & { validatorAddress: ActionDelegationReward['validator_address'] }
-  )>>> };
+  )>>>
+};
 
 export type AccountDelegationsQueryVariables = Exact<{
   address: Scalars['String'];
@@ -11506,10 +11518,12 @@ export type AccountDelegationsQueryVariables = Exact<{
 }>;
 
 
-export type AccountDelegationsQuery = { delegations?: Maybe<(
+export type AccountDelegationsQuery = {
+  delegations?: Maybe<(
     { __typename?: 'ActionDelegationResponse' }
     & Pick<ActionDelegationResponse, 'delegations' | 'pagination'>
-  )> };
+  )>
+};
 
 export type AccountRedelegationsQueryVariables = Exact<{
   address: Scalars['String'];
@@ -11519,10 +11533,12 @@ export type AccountRedelegationsQueryVariables = Exact<{
 }>;
 
 
-export type AccountRedelegationsQuery = { redelegations?: Maybe<(
+export type AccountRedelegationsQuery = {
+  redelegations?: Maybe<(
     { __typename?: 'ActionRedelegationResponse' }
     & Pick<ActionRedelegationResponse, 'redelegations' | 'pagination'>
-  )> };
+  )>
+};
 
 export type AccountUndelegationsQueryVariables = Exact<{
   address: Scalars['String'];
@@ -11532,34 +11548,44 @@ export type AccountUndelegationsQueryVariables = Exact<{
 }>;
 
 
-export type AccountUndelegationsQuery = { undelegations?: Maybe<(
+export type AccountUndelegationsQuery = {
+  undelegations?: Maybe<(
     { __typename?: 'ActionUnbondingDelegationResponse' }
     & Pick<ActionUnbondingDelegationResponse, 'pagination'>
     & { undelegations: ActionUnbondingDelegationResponse['unbonding_delegations'] }
-  )> };
+  )>
+};
 
 export type ActiveValidatorCountQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ActiveValidatorCountQuery = { activeTotal: (
+export type ActiveValidatorCountQuery = {
+  activeTotal: (
     { __typename?: 'validator_status_aggregate' }
-    & { aggregate?: Maybe<(
-      { __typename?: 'validator_status_aggregate_fields' }
-      & Pick<Validator_Status_Aggregate_Fields, 'count'>
-    )> }
+    & {
+      aggregate?: Maybe<(
+        { __typename?: 'validator_status_aggregate_fields' }
+        & Pick<Validator_Status_Aggregate_Fields, 'count'>
+      )>
+    }
   ), inactiveTotal: (
     { __typename?: 'validator_status_aggregate' }
-    & { aggregate?: Maybe<(
-      { __typename?: 'validator_status_aggregate_fields' }
-      & Pick<Validator_Status_Aggregate_Fields, 'count'>
-    )> }
+    & {
+      aggregate?: Maybe<(
+        { __typename?: 'validator_status_aggregate_fields' }
+        & Pick<Validator_Status_Aggregate_Fields, 'count'>
+      )>
+    }
   ), total: (
     { __typename?: 'validator_status_aggregate' }
-    & { aggregate?: Maybe<(
-      { __typename?: 'validator_status_aggregate_fields' }
-      & Pick<Validator_Status_Aggregate_Fields, 'count'>
-    )> }
-  ) };
+    & {
+      aggregate?: Maybe<(
+        { __typename?: 'validator_status_aggregate_fields' }
+        & Pick<Validator_Status_Aggregate_Fields, 'count'>
+      )>
+    }
+  )
+};
 
 export type BlockDetailsQueryVariables = Exact<{
   height?: Maybe<Scalars['bigint']>;
@@ -11567,67 +11593,87 @@ export type BlockDetailsQueryVariables = Exact<{
 }>;
 
 
-export type BlockDetailsQuery = { transaction: Array<(
+export type BlockDetailsQuery = {
+  transaction: Array<(
     { __typename?: 'transaction' }
     & Pick<Transaction, 'height' | 'hash' | 'messages' | 'success' | 'logs'>
   )>, block: Array<(
     { __typename?: 'block' }
     & Pick<Block, 'height' | 'hash' | 'timestamp'>
     & { txs: Block['num_txs'] }
-    & { validator?: Maybe<(
-      { __typename?: 'validator' }
-      & { validatorInfo?: Maybe<(
-        { __typename?: 'validator_info' }
-        & { operatorAddress: Validator_Info['operator_address'] }
-      )> }
-    )> }
+    & {
+      validator?: Maybe<(
+        { __typename?: 'validator' }
+        & {
+          validatorInfo?: Maybe<(
+            { __typename?: 'validator_info' }
+            & { operatorAddress: Validator_Info['operator_address'] }
+          )>
+        }
+      )>
+    }
   )>, preCommitsAggregate: (
     { __typename?: 'pre_commit_aggregate' }
-    & { aggregate?: Maybe<(
-      { __typename?: 'pre_commit_aggregate_fields' }
-      & { sum?: Maybe<(
-        { __typename?: 'pre_commit_sum_fields' }
-        & { votingPower: Pre_Commit_Sum_Fields['voting_power'] }
-      )> }
-    )> }
+    & {
+      aggregate?: Maybe<(
+        { __typename?: 'pre_commit_aggregate_fields' }
+        & {
+          sum?: Maybe<(
+            { __typename?: 'pre_commit_sum_fields' }
+            & { votingPower: Pre_Commit_Sum_Fields['voting_power'] }
+          )>
+        }
+      )>
+    }
   ), preCommits: Array<(
     { __typename?: 'pre_commit' }
-    & { validator: (
-      { __typename?: 'validator' }
-      & { validatorInfo?: Maybe<(
-        { __typename?: 'validator_info' }
-        & { operatorAddress: Validator_Info['operator_address'] }
-      )> }
-    ) }
-  )> };
+    & {
+      validator: (
+        { __typename?: 'validator' }
+        & {
+          validatorInfo?: Maybe<(
+            { __typename?: 'validator_info' }
+            & { operatorAddress: Validator_Info['operator_address'] }
+          )>
+        }
+      )
+    }
+  )>
+};
 
 export type LatestBlockHeightListenerSubscriptionVariables = Exact<{
   offset?: Maybe<Scalars['Int']>;
 }>;
 
 
-export type LatestBlockHeightListenerSubscription = { height: Array<(
+export type LatestBlockHeightListenerSubscription = {
+  height: Array<(
     { __typename?: 'block' }
     & Pick<Block, 'height'>
-  )> };
+  )>
+};
 
 export type AverageBlockTimeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AverageBlockTimeQuery = { averageBlockTime: Array<(
+export type AverageBlockTimeQuery = {
+  averageBlockTime: Array<(
     { __typename?: 'average_block_time_per_hour' }
     & { averageTime: Average_Block_Time_Per_Hour['average_time'] }
-  )> };
+  )>
+};
 
 export type LatestBlockTimestampQueryVariables = Exact<{
   offset?: Maybe<Scalars['Int']>;
 }>;
 
 
-export type LatestBlockTimestampQuery = { block: Array<(
+export type LatestBlockTimestampQuery = {
+  block: Array<(
     { __typename?: 'block' }
     & Pick<Block, 'timestamp'>
-  )> };
+  )>
+};
 
 export type BlocksListenerSubscriptionVariables = Exact<{
   limit?: Maybe<Scalars['Int']>;
@@ -11635,18 +11681,24 @@ export type BlocksListenerSubscriptionVariables = Exact<{
 }>;
 
 
-export type BlocksListenerSubscription = { blocks: Array<(
+export type BlocksListenerSubscription = {
+  blocks: Array<(
     { __typename?: 'block' }
     & Pick<Block, 'height' | 'hash' | 'timestamp'>
     & { txs: Block['num_txs'] }
-    & { validator?: Maybe<(
-      { __typename?: 'validator' }
-      & { validatorInfo?: Maybe<(
-        { __typename?: 'validator_info' }
-        & { operatorAddress: Validator_Info['operator_address'] }
-      )> }
-    )> }
-  )> };
+    & {
+      validator?: Maybe<(
+        { __typename?: 'validator' }
+        & {
+          validatorInfo?: Maybe<(
+            { __typename?: 'validator_info' }
+            & { operatorAddress: Validator_Info['operator_address'] }
+          )>
+        }
+      )>
+    }
+  )>
+};
 
 export type BlocksQueryVariables = Exact<{
   limit?: Maybe<Scalars['Int']>;
@@ -11654,38 +11706,47 @@ export type BlocksQueryVariables = Exact<{
 }>;
 
 
-export type BlocksQuery = { blocks: Array<(
+export type BlocksQuery = {
+  blocks: Array<(
     { __typename?: 'block' }
     & Pick<Block, 'height' | 'hash' | 'timestamp'>
     & { txs: Block['num_txs'] }
-    & { validator?: Maybe<(
-      { __typename?: 'validator' }
-      & { validatorInfo?: Maybe<(
-        { __typename?: 'validator_info' }
-        & Pick<Validator_Info, 'self_delegate_address'>
-        & { operatorAddress: Validator_Info['operator_address'] }
-      )>, validatorDescriptions: Array<(
-        { __typename?: 'validator_description' }
-        & Pick<Validator_Description, 'moniker' | 'identity'>
-      )> }
-    )> }
-  )> };
+    & {
+      validator?: Maybe<(
+        { __typename?: 'validator' }
+        & {
+          validatorInfo?: Maybe<(
+            { __typename?: 'validator_info' }
+            & Pick<Validator_Info, 'self_delegate_address'>
+            & { operatorAddress: Validator_Info['operator_address'] }
+          )>, validatorDescriptions: Array<(
+            { __typename?: 'validator_description' }
+            & Pick<Validator_Description, 'moniker' | 'identity'>
+          )>
+        }
+      )>
+    }
+  )>
+};
 
 export type ChainIdQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ChainIdQuery = { genesis: Array<(
+export type ChainIdQuery = {
+  genesis: Array<(
     { __typename?: 'genesis' }
     & Pick<Genesis, 'time'>
     & { chainId: Genesis['chain_id'] }
-  )> };
+  )>
+};
 
 export type MarketDataQueryVariables = Exact<{
   denom?: Maybe<Scalars['String']>;
 }>;
 
 
-export type MarketDataQuery = { communityPool: Array<(
+export type MarketDataQuery = {
+  communityPool: Array<(
     { __typename?: 'community_pool' }
     & Pick<Community_Pool, 'coins'>
   )>, inflation: Array<(
@@ -11704,7 +11765,8 @@ export type MarketDataQuery = { communityPool: Array<(
   )>, distributionParams: Array<(
     { __typename?: 'distribution_params' }
     & Pick<Distribution_Params, 'params'>
-  )> };
+  )>
+};
 
 export type GetMessagesByAddressQueryVariables = Exact<{
   address?: Maybe<Scalars['_text']>;
@@ -11714,48 +11776,63 @@ export type GetMessagesByAddressQueryVariables = Exact<{
 }>;
 
 
-export type GetMessagesByAddressQuery = { messagesByAddress: Array<(
+export type GetMessagesByAddressQuery = {
+  messagesByAddress: Array<(
     { __typename?: 'message' }
-    & { transaction?: Maybe<(
-      { __typename?: 'transaction' }
-      & Pick<Transaction, 'height' | 'hash' | 'success' | 'messages' | 'logs'>
-      & { block: (
-        { __typename?: 'block' }
-        & Pick<Block, 'height' | 'timestamp'>
-      ) }
-    )> }
-  )> };
+    & {
+      transaction?: Maybe<(
+        { __typename?: 'transaction' }
+        & Pick<Transaction, 'height' | 'hash' | 'success' | 'messages' | 'logs'>
+        & {
+          block: (
+            { __typename?: 'block' }
+            & Pick<Block, 'height' | 'timestamp'>
+          )
+        }
+      )>
+    }
+  )>
+};
 
 export type OnlineVotingPowerQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type OnlineVotingPowerQuery = { activeTotal: (
+export type OnlineVotingPowerQuery = {
+  activeTotal: (
     { __typename?: 'validator_status_aggregate' }
-    & { aggregate?: Maybe<(
-      { __typename?: 'validator_status_aggregate_fields' }
-      & Pick<Validator_Status_Aggregate_Fields, 'count'>
-    )> }
+    & {
+      aggregate?: Maybe<(
+        { __typename?: 'validator_status_aggregate_fields' }
+        & Pick<Validator_Status_Aggregate_Fields, 'count'>
+      )>
+    }
   ), validatorVotingPowerAggregate: (
     { __typename?: 'validator_voting_power_aggregate' }
-    & { aggregate?: Maybe<(
-      { __typename?: 'validator_voting_power_aggregate_fields' }
-      & { sum?: Maybe<(
-        { __typename?: 'validator_voting_power_sum_fields' }
-        & { votingPower: Validator_Voting_Power_Sum_Fields['voting_power'] }
-      )> }
-    )> }
+    & {
+      aggregate?: Maybe<(
+        { __typename?: 'validator_voting_power_aggregate_fields' }
+        & {
+          sum?: Maybe<(
+            { __typename?: 'validator_voting_power_sum_fields' }
+            & { votingPower: Validator_Voting_Power_Sum_Fields['voting_power'] }
+          )>
+        }
+      )>
+    }
   ), stakingPool: Array<(
     { __typename?: 'staking_pool' }
     & { bonded: Staking_Pool['bonded_tokens'] }
   )>, stakingParams: Array<(
     { __typename?: 'staking_params' }
     & Pick<Staking_Params, 'params'>
-  )> };
+  )>
+};
 
 export type ParamsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ParamsQuery = { stakingParams: Array<(
+export type ParamsQuery = {
+  stakingParams: Array<(
     { __typename?: 'staking_params' }
     & Pick<Staking_Params, 'params'>
   )>, slashingParams: Array<(
@@ -11770,25 +11847,29 @@ export type ParamsQuery = { stakingParams: Array<(
   )>, govParams: Array<(
     { __typename?: 'gov_params' }
     & { depositParams: Gov_Params['deposit_params'], tallyParams: Gov_Params['tally_params'], votingParams: Gov_Params['voting_params'] }
-  )> };
+  )>
+};
 
 export type ProposalDetailsQueryVariables = Exact<{
   proposalId?: Maybe<Scalars['Int']>;
 }>;
 
 
-export type ProposalDetailsQuery = { proposal: Array<(
+export type ProposalDetailsQuery = {
+  proposal: Array<(
     { __typename?: 'proposal' }
     & Pick<Proposal, 'title' | 'description' | 'status' | 'content'>
     & { proposer: Proposal['proposer_address'], proposalId: Proposal['id'], submitTime: Proposal['submit_time'], depositEndTime: Proposal['deposit_end_time'], votingStartTime: Proposal['voting_start_time'], votingEndTime: Proposal['voting_end_time'] }
-  )> };
+  )>
+};
 
 export type ProposalDetailsTallyQueryVariables = Exact<{
   proposalId?: Maybe<Scalars['Int']>;
 }>;
 
 
-export type ProposalDetailsTallyQuery = { proposalTallyResult: Array<(
+export type ProposalDetailsTallyQuery = {
+  proposalTallyResult: Array<(
     { __typename?: 'proposal_tally_result' }
     & Pick<Proposal_Tally_Result, 'yes' | 'no' | 'abstain'>
     & { noWithVeto: Proposal_Tally_Result['no_with_veto'] }
@@ -11798,42 +11879,53 @@ export type ProposalDetailsTallyQuery = { proposalTallyResult: Array<(
   )>, quorum: Array<(
     { __typename?: 'gov_params' }
     & { tallyParams: Gov_Params['tally_params'] }
-  )> };
+  )>
+};
 
 export type ProposalDetailsDepositsQueryVariables = Exact<{
   proposalId?: Maybe<Scalars['Int']>;
 }>;
 
 
-export type ProposalDetailsDepositsQuery = { proposalDeposit: Array<(
+export type ProposalDetailsDepositsQuery = {
+  proposalDeposit: Array<(
     { __typename?: 'proposal_deposit' }
     & Pick<Proposal_Deposit, 'amount'>
     & { depositorAddress: Proposal_Deposit['depositor_address'] }
-    & { block?: Maybe<(
-      { __typename?: 'block' }
-      & Pick<Block, 'timestamp'>
-    )> }
-  )> };
+    & {
+      block?: Maybe<(
+        { __typename?: 'block' }
+        & Pick<Block, 'timestamp'>
+      )>
+    }
+  )>
+};
 
 export type ProposalDetailsVotesQueryVariables = Exact<{
   proposalId?: Maybe<Scalars['Int']>;
 }>;
 
 
-export type ProposalDetailsVotesQuery = { proposalVote: Array<(
+export type ProposalDetailsVotesQuery = {
+  proposalVote: Array<(
     { __typename?: 'proposal_vote' }
     & Pick<Proposal_Vote, 'option'>
     & { voterAddress: Proposal_Vote['voter_address'] }
   )>, validatorStatuses: Array<(
     { __typename?: 'proposal_validator_status_snapshot' }
-    & { validator: (
-      { __typename?: 'validator' }
-      & { validatorInfo?: Maybe<(
-        { __typename?: 'validator_info' }
-        & { selfDelegateAddress: Validator_Info['self_delegate_address'] }
-      )> }
-    ) }
-  )> };
+    & {
+      validator: (
+        { __typename?: 'validator' }
+        & {
+          validatorInfo?: Maybe<(
+            { __typename?: 'validator_info' }
+            & { selfDelegateAddress: Validator_Info['self_delegate_address'] }
+          )>
+        }
+      )
+    }
+  )>
+};
 
 export type ProposalsQueryVariables = Exact<{
   limit?: Maybe<Scalars['Int']>;
@@ -11841,28 +11933,34 @@ export type ProposalsQueryVariables = Exact<{
 }>;
 
 
-export type ProposalsQuery = { proposals: Array<(
+export type ProposalsQuery = {
+  proposals: Array<(
     { __typename?: 'proposal' }
     & Pick<Proposal, 'title' | 'status' | 'description'>
     & { proposalId: Proposal['id'] }
   )>, total: (
     { __typename?: 'proposal_aggregate' }
-    & { aggregate?: Maybe<(
-      { __typename?: 'proposal_aggregate_fields' }
-      & Pick<Proposal_Aggregate_Fields, 'count'>
-    )> }
-  ) };
+    & {
+      aggregate?: Maybe<(
+        { __typename?: 'proposal_aggregate_fields' }
+        & Pick<Proposal_Aggregate_Fields, 'count'>
+      )>
+    }
+  )
+};
 
 export type TokenPriceListenerSubscriptionVariables = Exact<{
   denom?: Maybe<Scalars['String']>;
 }>;
 
 
-export type TokenPriceListenerSubscription = { tokenPrice: Array<(
+export type TokenPriceListenerSubscription = {
+  tokenPrice: Array<(
     { __typename?: 'token_price' }
     & Pick<Token_Price, 'id' | 'price' | 'timestamp'>
     & { marketCap: Token_Price['market_cap'], unitName: Token_Price['unit_name'] }
-  )> };
+  )>
+};
 
 export type TokenPriceHistoryQueryVariables = Exact<{
   denom?: Maybe<Scalars['String']>;
@@ -11870,15 +11968,18 @@ export type TokenPriceHistoryQueryVariables = Exact<{
 }>;
 
 
-export type TokenPriceHistoryQuery = { tokenPrice: Array<(
+export type TokenPriceHistoryQuery = {
+  tokenPrice: Array<(
     { __typename?: 'token_price_history' }
     & Pick<Token_Price_History, 'price' | 'timestamp'>
-  )> };
+  )>
+};
 
 export type TokenomicsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type TokenomicsQuery = { stakingParams: Array<(
+export type TokenomicsQuery = {
+  stakingParams: Array<(
     { __typename?: 'staking_params' }
     & Pick<Staking_Params, 'params'>
   )>, stakingPool: Array<(
@@ -11887,22 +11988,27 @@ export type TokenomicsQuery = { stakingParams: Array<(
   )>, supply: Array<(
     { __typename?: 'supply' }
     & Pick<Supply, 'coins'>
-  )> };
+  )>
+};
 
 export type TransactionDetailsQueryVariables = Exact<{
   hash?: Maybe<Scalars['String']>;
 }>;
 
 
-export type TransactionDetailsQuery = { transaction: Array<(
+export type TransactionDetailsQuery = {
+  transaction: Array<(
     { __typename?: 'transaction' }
     & Pick<Transaction, 'logs'>
     & { hash: Transaction['hash'], height: Transaction['height'], fee: Transaction['fee'], gasUsed: Transaction['gas_used'], gasWanted: Transaction['gas_wanted'], success: Transaction['success'], memo: Transaction['memo'], messages: Transaction['messages'], rawLog: Transaction['raw_log'] }
-    & { block: (
-      { __typename?: 'block' }
-      & { timestamp: Block['timestamp'] }
-    ) }
-  )> };
+    & {
+      block: (
+        { __typename?: 'block' }
+        & { timestamp: Block['timestamp'] }
+      )
+    }
+  )>
+};
 
 export type TransactionsListenerSubscriptionVariables = Exact<{
   limit?: Maybe<Scalars['Int']>;
@@ -11910,14 +12016,18 @@ export type TransactionsListenerSubscriptionVariables = Exact<{
 }>;
 
 
-export type TransactionsListenerSubscription = { transactions: Array<(
+export type TransactionsListenerSubscription = {
+  transactions: Array<(
     { __typename?: 'transaction' }
     & Pick<Transaction, 'height' | 'hash' | 'success' | 'messages' | 'logs'>
-    & { block: (
-      { __typename?: 'block' }
-      & Pick<Block, 'timestamp'>
-    ) }
-  )> };
+    & {
+      block: (
+        { __typename?: 'block' }
+        & Pick<Block, 'timestamp'>
+      )
+    }
+  )>
+};
 
 export type TransactionsQueryVariables = Exact<{
   limit?: Maybe<Scalars['Int']>;
@@ -11925,84 +12035,100 @@ export type TransactionsQueryVariables = Exact<{
 }>;
 
 
-export type TransactionsQuery = { transactions: Array<(
+export type TransactionsQuery = {
+  transactions: Array<(
     { __typename?: 'transaction' }
     & Pick<Transaction, 'height' | 'hash' | 'success' | 'messages' | 'logs'>
-    & { block: (
-      { __typename?: 'block' }
-      & Pick<Block, 'timestamp'>
-    ) }
-  )> };
+    & {
+      block: (
+        { __typename?: 'block' }
+        & Pick<Block, 'timestamp'>
+      )
+    }
+  )>
+};
 
 export type LastHundredBlocksSubscriptionVariables = Exact<{
   address?: Maybe<Scalars['String']>;
 }>;
 
 
-export type LastHundredBlocksSubscription = { block: Array<(
+export type LastHundredBlocksSubscription = {
+  block: Array<(
     { __typename?: 'block' }
     & Pick<Block, 'height'>
-    & { validator?: Maybe<(
-      { __typename?: 'validator' }
-      & { validatorInfo?: Maybe<(
-        { __typename?: 'validator_info' }
-        & { operatorAddress: Validator_Info['operator_address'] }
-      )> }
-    )>, transactions: Array<(
-      { __typename?: 'transaction' }
-      & Pick<Transaction, 'hash'>
-    )>, precommits: Array<(
-      { __typename?: 'pre_commit' }
-      & { validatorAddress: Pre_Commit['validator_address'] }
-    )> }
-  )> };
+    & {
+      validator?: Maybe<(
+        { __typename?: 'validator' }
+        & {
+          validatorInfo?: Maybe<(
+            { __typename?: 'validator_info' }
+            & { operatorAddress: Validator_Info['operator_address'] }
+          )>
+        }
+      )>, transactions: Array<(
+        { __typename?: 'transaction' }
+        & Pick<Transaction, 'hash'>
+      )>, precommits: Array<(
+        { __typename?: 'pre_commit' }
+        & { validatorAddress: Pre_Commit['validator_address'] }
+      )>
+    }
+  )>
+};
 
 export type ValidatorLastSeenListenerSubscriptionVariables = Exact<{
   address?: Maybe<Scalars['String']>;
 }>;
 
 
-export type ValidatorLastSeenListenerSubscription = { preCommit: Array<(
+export type ValidatorLastSeenListenerSubscription = {
+  preCommit: Array<(
     { __typename?: 'pre_commit' }
     & Pick<Pre_Commit, 'height' | 'timestamp'>
-  )> };
+  )>
+};
 
 export type ValidatorDetailsQueryVariables = Exact<{
   address?: Maybe<Scalars['String']>;
 }>;
 
 
-export type ValidatorDetailsQuery = { stakingPool: Array<(
+export type ValidatorDetailsQuery = {
+  stakingPool: Array<(
     { __typename?: 'staking_pool' }
     & Pick<Staking_Pool, 'height'>
     & { bonded: Staking_Pool['bonded_tokens'] }
   )>, validator: Array<(
     { __typename?: 'validator' }
-    & { validatorDescriptions: Array<(
-      { __typename?: 'validator_description' }
-      & Pick<Validator_Description, 'details' | 'website'>
-    )>, validatorStatuses: Array<(
-      { __typename?: 'validator_status' }
-      & Pick<Validator_Status, 'status' | 'jailed' | 'height'>
-    )>, validatorSigningInfos: Array<(
-      { __typename?: 'validator_signing_info' }
-      & Pick<Validator_Signing_Info, 'tombstoned'>
-      & { missedBlocksCounter: Validator_Signing_Info['missed_blocks_counter'] }
-    )>, validatorInfo?: Maybe<(
-      { __typename?: 'validator_info' }
-      & { operatorAddress: Validator_Info['operator_address'], selfDelegateAddress: Validator_Info['self_delegate_address'], maxRate: Validator_Info['max_rate'] }
-    )>, validatorCommissions: Array<(
-      { __typename?: 'validator_commission' }
-      & Pick<Validator_Commission, 'commission'>
-    )>, validatorVotingPowers: Array<(
-      { __typename?: 'validator_voting_power' }
-      & Pick<Validator_Voting_Power, 'height'>
-      & { votingPower: Validator_Voting_Power['voting_power'] }
-    )> }
+    & {
+      validatorDescriptions: Array<(
+        { __typename?: 'validator_description' }
+        & Pick<Validator_Description, 'details' | 'website'>
+      )>, validatorStatuses: Array<(
+        { __typename?: 'validator_status' }
+        & Pick<Validator_Status, 'status' | 'jailed' | 'height'>
+      )>, validatorSigningInfos: Array<(
+        { __typename?: 'validator_signing_info' }
+        & Pick<Validator_Signing_Info, 'tombstoned'>
+        & { missedBlocksCounter: Validator_Signing_Info['missed_blocks_counter'] }
+      )>, validatorInfo?: Maybe<(
+        { __typename?: 'validator_info' }
+        & { operatorAddress: Validator_Info['operator_address'], selfDelegateAddress: Validator_Info['self_delegate_address'], maxRate: Validator_Info['max_rate'] }
+      )>, validatorCommissions: Array<(
+        { __typename?: 'validator_commission' }
+        & Pick<Validator_Commission, 'commission'>
+      )>, validatorVotingPowers: Array<(
+        { __typename?: 'validator_voting_power' }
+        & Pick<Validator_Voting_Power, 'height'>
+        & { votingPower: Validator_Voting_Power['voting_power'] }
+      )>
+    }
   )>, slashingParams: Array<(
     { __typename?: 'slashing_params' }
     & Pick<Slashing_Params, 'params'>
-  )> };
+  )>
+};
 
 export type ValidatorDelegationsQueryVariables = Exact<{
   validatorAddress: Scalars['String'];
@@ -12012,10 +12138,12 @@ export type ValidatorDelegationsQueryVariables = Exact<{
 }>;
 
 
-export type ValidatorDelegationsQuery = { delegations?: Maybe<(
+export type ValidatorDelegationsQuery = {
+  delegations?: Maybe<(
     { __typename?: 'ActionDelegationResponse' }
     & Pick<ActionDelegationResponse, 'delegations' | 'pagination'>
-  )> };
+  )>
+};
 
 export type ValidatorRedelegationsQueryVariables = Exact<{
   validatorAddress: Scalars['String'];
@@ -12025,10 +12153,12 @@ export type ValidatorRedelegationsQueryVariables = Exact<{
 }>;
 
 
-export type ValidatorRedelegationsQuery = { redelegations?: Maybe<(
+export type ValidatorRedelegationsQuery = {
+  redelegations?: Maybe<(
     { __typename?: 'ActionRedelegationResponse' }
     & Pick<ActionRedelegationResponse, 'redelegations' | 'pagination'>
-  )> };
+  )>
+};
 
 export type ValidatorUndelegationsQueryVariables = Exact<{
   validatorAddress: Scalars['String'];
@@ -12038,71 +12168,90 @@ export type ValidatorUndelegationsQueryVariables = Exact<{
 }>;
 
 
-export type ValidatorUndelegationsQuery = { undelegations?: Maybe<(
+export type ValidatorUndelegationsQuery = {
+  undelegations?: Maybe<(
     { __typename?: 'ActionUnbondingDelegationResponse' }
     & Pick<ActionUnbondingDelegationResponse, 'pagination'>
     & { undelegations: ActionUnbondingDelegationResponse['unbonding_delegations'] }
-  )> };
+  )>
+};
 
 export type ValidatorsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ValidatorsQuery = { stakingPool: Array<(
+export type ValidatorsQuery = {
+  stakingPool: Array<(
     { __typename?: 'staking_pool' }
     & { bondedTokens: Staking_Pool['bonded_tokens'] }
-  )>, validator: Array<(
-    { __typename?: 'validator' }
-    & { validatorStatuses: Array<(
-      { __typename?: 'validator_status' }
-      & Pick<Validator_Status, 'status' | 'jailed' | 'height'>
-    )>, validatorSigningInfos: Array<(
-      { __typename?: 'validator_signing_info' }
-      & Pick<Validator_Signing_Info, 'tombstoned'>
-      & { missedBlocksCounter: Validator_Signing_Info['missed_blocks_counter'] }
-    )>, validatorInfo?: Maybe<(
-      { __typename?: 'validator_info' }
-      & { operatorAddress: Validator_Info['operator_address'], selfDelegateAddress: Validator_Info['self_delegate_address'] }
-    )>, validatorVotingPowers: Array<(
-      { __typename?: 'validator_voting_power' }
-      & { votingPower: Validator_Voting_Power['voting_power'] }
-    )>, validatorCommissions: Array<(
-      { __typename?: 'validator_commission' }
-      & Pick<Validator_Commission, 'commission'>
-    )> }
+  )>, list: Array<(
+    { __typename?: 'list' }
+    & {
+      validator: Maybe<(
+        { __typename?: 'validator' }
+        & {
+          validatorStatuses: Array<(
+            { __typename?: 'validator_status' }
+            & Pick<Validator_Status, 'status' | 'jailed' | 'height'>
+          )>, validatorSigningInfos: Array<(
+            { __typename?: 'validator_signing_info' }
+            & Pick<Validator_Signing_Info, 'tombstoned'>
+            & { missedBlocksCounter: Validator_Signing_Info['missed_blocks_counter'] }
+          )>, validatorInfo?: Maybe<(
+            { __typename?: 'validator_info' }
+            & { operatorAddress: Validator_Info['operator_address'], selfDelegateAddress: Validator_Info['self_delegate_address'] }
+          )>, validatorVotingPowers: Array<(
+            { __typename?: 'validator_voting_power' }
+            & { votingPower: Validator_Voting_Power['voting_power'] }
+          )>, validatorCommissions: Array<(
+            { __typename?: 'validator_commission' }
+            & Pick<Validator_Commission, 'commission'>
+          )>
+        }
+      )>
+    }
   )>, slashingParams: Array<(
     { __typename?: 'slashing_params' }
     & Pick<Slashing_Params, 'params'>
-  )> };
+  )>
+};
 
 export type ValidatorsAddressListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ValidatorsAddressListQuery = { validator: Array<(
+export type ValidatorsAddressListQuery = {
+  validator: Array<(
     { __typename?: 'validator' }
-    & { validatorInfo?: Maybe<(
-      { __typename?: 'validator_info' }
-      & { operatorAddress: Validator_Info['operator_address'], selfDelegateAddress: Validator_Info['self_delegate_address'], consensusAddress: Validator_Info['consensus_address'] }
-    )>, validatorDescriptions: Array<(
-      { __typename?: 'validator_description' }
-      & Pick<Validator_Description, 'moniker' | 'identity'>
-      & { avatarUrl: Validator_Description['avatar_url'] }
-    )> }
-  )> };
+    & {
+      validatorInfo?: Maybe<(
+        { __typename?: 'validator_info' }
+        & { operatorAddress: Validator_Info['operator_address'], selfDelegateAddress: Validator_Info['self_delegate_address'], consensusAddress: Validator_Info['consensus_address'] }
+      )>, validatorDescriptions: Array<(
+        { __typename?: 'validator_description' }
+        & Pick<Validator_Description, 'moniker' | 'identity'>
+        & { avatarUrl: Validator_Description['avatar_url'] }
+      )>
+    }
+  )>
+};
 
 export type ValidatorAddressesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ValidatorAddressesQuery = { validator: Array<(
+export type ValidatorAddressesQuery = {
+  validator: Array<(
     { __typename?: 'validator' }
-    & { validatorInfo?: Maybe<(
-      { __typename?: 'validator_info' }
-      & { operatorAddress: Validator_Info['operator_address'], selfDelegateAddress: Validator_Info['self_delegate_address'], consensusAddress: Validator_Info['consensus_address'] }
-    )>, validatorDescriptions: Array<(
-      { __typename?: 'validator_description' }
-      & Pick<Validator_Description, 'moniker'>
-      & { avatarUrl: Validator_Description['avatar_url'] }
-    )> }
-  )> };
+    & {
+      validatorInfo?: Maybe<(
+        { __typename?: 'validator_info' }
+        & { operatorAddress: Validator_Info['operator_address'], selfDelegateAddress: Validator_Info['self_delegate_address'], consensusAddress: Validator_Info['consensus_address'] }
+      )>, validatorDescriptions: Array<(
+        { __typename?: 'validator_description' }
+        & Pick<Validator_Description, 'moniker'>
+        & { avatarUrl: Validator_Description['avatar_url'] }
+      )>
+    }
+  )>
+};
 
 
 export const AccountCommissionDocument = gql`
@@ -12130,13 +12279,13 @@ export const AccountCommissionDocument = gql`
  * });
  */
 export function useAccountCommissionQuery(baseOptions: Apollo.QueryHookOptions<AccountCommissionQuery, AccountCommissionQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountCommissionQuery, AccountCommissionQueryVariables>(AccountCommissionDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountCommissionQuery, AccountCommissionQueryVariables>(AccountCommissionDocument, options);
+}
 export function useAccountCommissionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountCommissionQuery, AccountCommissionQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountCommissionQuery, AccountCommissionQueryVariables>(AccountCommissionDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountCommissionQuery, AccountCommissionQueryVariables>(AccountCommissionDocument, options);
+}
 export type AccountCommissionQueryHookResult = ReturnType<typeof useAccountCommissionQuery>;
 export type AccountCommissionLazyQueryHookResult = ReturnType<typeof useAccountCommissionLazyQuery>;
 export type AccountCommissionQueryResult = Apollo.QueryResult<AccountCommissionQuery, AccountCommissionQueryVariables>;
@@ -12165,13 +12314,13 @@ export const AccountWithdrawalAddressDocument = gql`
  * });
  */
 export function useAccountWithdrawalAddressQuery(baseOptions: Apollo.QueryHookOptions<AccountWithdrawalAddressQuery, AccountWithdrawalAddressQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountWithdrawalAddressQuery, AccountWithdrawalAddressQueryVariables>(AccountWithdrawalAddressDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountWithdrawalAddressQuery, AccountWithdrawalAddressQueryVariables>(AccountWithdrawalAddressDocument, options);
+}
 export function useAccountWithdrawalAddressLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountWithdrawalAddressQuery, AccountWithdrawalAddressQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountWithdrawalAddressQuery, AccountWithdrawalAddressQueryVariables>(AccountWithdrawalAddressDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountWithdrawalAddressQuery, AccountWithdrawalAddressQueryVariables>(AccountWithdrawalAddressDocument, options);
+}
 export type AccountWithdrawalAddressQueryHookResult = ReturnType<typeof useAccountWithdrawalAddressQuery>;
 export type AccountWithdrawalAddressLazyQueryHookResult = ReturnType<typeof useAccountWithdrawalAddressLazyQuery>;
 export type AccountWithdrawalAddressQueryResult = Apollo.QueryResult<AccountWithdrawalAddressQuery, AccountWithdrawalAddressQueryVariables>;
@@ -12200,13 +12349,13 @@ export const AccountBalancesDocument = gql`
  * });
  */
 export function useAccountBalancesQuery(baseOptions: Apollo.QueryHookOptions<AccountBalancesQuery, AccountBalancesQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountBalancesQuery, AccountBalancesQueryVariables>(AccountBalancesDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountBalancesQuery, AccountBalancesQueryVariables>(AccountBalancesDocument, options);
+}
 export function useAccountBalancesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountBalancesQuery, AccountBalancesQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountBalancesQuery, AccountBalancesQueryVariables>(AccountBalancesDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountBalancesQuery, AccountBalancesQueryVariables>(AccountBalancesDocument, options);
+}
 export type AccountBalancesQueryHookResult = ReturnType<typeof useAccountBalancesQuery>;
 export type AccountBalancesLazyQueryHookResult = ReturnType<typeof useAccountBalancesLazyQuery>;
 export type AccountBalancesQueryResult = Apollo.QueryResult<AccountBalancesQuery, AccountBalancesQueryVariables>;
@@ -12235,13 +12384,13 @@ export const AccountDelegationBalanceDocument = gql`
  * });
  */
 export function useAccountDelegationBalanceQuery(baseOptions: Apollo.QueryHookOptions<AccountDelegationBalanceQuery, AccountDelegationBalanceQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountDelegationBalanceQuery, AccountDelegationBalanceQueryVariables>(AccountDelegationBalanceDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountDelegationBalanceQuery, AccountDelegationBalanceQueryVariables>(AccountDelegationBalanceDocument, options);
+}
 export function useAccountDelegationBalanceLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountDelegationBalanceQuery, AccountDelegationBalanceQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountDelegationBalanceQuery, AccountDelegationBalanceQueryVariables>(AccountDelegationBalanceDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountDelegationBalanceQuery, AccountDelegationBalanceQueryVariables>(AccountDelegationBalanceDocument, options);
+}
 export type AccountDelegationBalanceQueryHookResult = ReturnType<typeof useAccountDelegationBalanceQuery>;
 export type AccountDelegationBalanceLazyQueryHookResult = ReturnType<typeof useAccountDelegationBalanceLazyQuery>;
 export type AccountDelegationBalanceQueryResult = Apollo.QueryResult<AccountDelegationBalanceQuery, AccountDelegationBalanceQueryVariables>;
@@ -12270,13 +12419,13 @@ export const AccountUnbondingBalanceDocument = gql`
  * });
  */
 export function useAccountUnbondingBalanceQuery(baseOptions: Apollo.QueryHookOptions<AccountUnbondingBalanceQuery, AccountUnbondingBalanceQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountUnbondingBalanceQuery, AccountUnbondingBalanceQueryVariables>(AccountUnbondingBalanceDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountUnbondingBalanceQuery, AccountUnbondingBalanceQueryVariables>(AccountUnbondingBalanceDocument, options);
+}
 export function useAccountUnbondingBalanceLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountUnbondingBalanceQuery, AccountUnbondingBalanceQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountUnbondingBalanceQuery, AccountUnbondingBalanceQueryVariables>(AccountUnbondingBalanceDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountUnbondingBalanceQuery, AccountUnbondingBalanceQueryVariables>(AccountUnbondingBalanceDocument, options);
+}
 export type AccountUnbondingBalanceQueryHookResult = ReturnType<typeof useAccountUnbondingBalanceQuery>;
 export type AccountUnbondingBalanceLazyQueryHookResult = ReturnType<typeof useAccountUnbondingBalanceLazyQuery>;
 export type AccountUnbondingBalanceQueryResult = Apollo.QueryResult<AccountUnbondingBalanceQuery, AccountUnbondingBalanceQueryVariables>;
@@ -12306,13 +12455,13 @@ export const AccountDelegationRewardsDocument = gql`
  * });
  */
 export function useAccountDelegationRewardsQuery(baseOptions: Apollo.QueryHookOptions<AccountDelegationRewardsQuery, AccountDelegationRewardsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountDelegationRewardsQuery, AccountDelegationRewardsQueryVariables>(AccountDelegationRewardsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountDelegationRewardsQuery, AccountDelegationRewardsQueryVariables>(AccountDelegationRewardsDocument, options);
+}
 export function useAccountDelegationRewardsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountDelegationRewardsQuery, AccountDelegationRewardsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountDelegationRewardsQuery, AccountDelegationRewardsQueryVariables>(AccountDelegationRewardsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountDelegationRewardsQuery, AccountDelegationRewardsQueryVariables>(AccountDelegationRewardsDocument, options);
+}
 export type AccountDelegationRewardsQueryHookResult = ReturnType<typeof useAccountDelegationRewardsQuery>;
 export type AccountDelegationRewardsLazyQueryHookResult = ReturnType<typeof useAccountDelegationRewardsLazyQuery>;
 export type AccountDelegationRewardsQueryResult = Apollo.QueryResult<AccountDelegationRewardsQuery, AccountDelegationRewardsQueryVariables>;
@@ -12350,13 +12499,13 @@ export const AccountDelegationsDocument = gql`
  * });
  */
 export function useAccountDelegationsQuery(baseOptions: Apollo.QueryHookOptions<AccountDelegationsQuery, AccountDelegationsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountDelegationsQuery, AccountDelegationsQueryVariables>(AccountDelegationsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountDelegationsQuery, AccountDelegationsQueryVariables>(AccountDelegationsDocument, options);
+}
 export function useAccountDelegationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountDelegationsQuery, AccountDelegationsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountDelegationsQuery, AccountDelegationsQueryVariables>(AccountDelegationsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountDelegationsQuery, AccountDelegationsQueryVariables>(AccountDelegationsDocument, options);
+}
 export type AccountDelegationsQueryHookResult = ReturnType<typeof useAccountDelegationsQuery>;
 export type AccountDelegationsLazyQueryHookResult = ReturnType<typeof useAccountDelegationsLazyQuery>;
 export type AccountDelegationsQueryResult = Apollo.QueryResult<AccountDelegationsQuery, AccountDelegationsQueryVariables>;
@@ -12394,13 +12543,13 @@ export const AccountRedelegationsDocument = gql`
  * });
  */
 export function useAccountRedelegationsQuery(baseOptions: Apollo.QueryHookOptions<AccountRedelegationsQuery, AccountRedelegationsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountRedelegationsQuery, AccountRedelegationsQueryVariables>(AccountRedelegationsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountRedelegationsQuery, AccountRedelegationsQueryVariables>(AccountRedelegationsDocument, options);
+}
 export function useAccountRedelegationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountRedelegationsQuery, AccountRedelegationsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountRedelegationsQuery, AccountRedelegationsQueryVariables>(AccountRedelegationsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountRedelegationsQuery, AccountRedelegationsQueryVariables>(AccountRedelegationsDocument, options);
+}
 export type AccountRedelegationsQueryHookResult = ReturnType<typeof useAccountRedelegationsQuery>;
 export type AccountRedelegationsLazyQueryHookResult = ReturnType<typeof useAccountRedelegationsLazyQuery>;
 export type AccountRedelegationsQueryResult = Apollo.QueryResult<AccountRedelegationsQuery, AccountRedelegationsQueryVariables>;
@@ -12438,13 +12587,13 @@ export const AccountUndelegationsDocument = gql`
  * });
  */
 export function useAccountUndelegationsQuery(baseOptions: Apollo.QueryHookOptions<AccountUndelegationsQuery, AccountUndelegationsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AccountUndelegationsQuery, AccountUndelegationsQueryVariables>(AccountUndelegationsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AccountUndelegationsQuery, AccountUndelegationsQueryVariables>(AccountUndelegationsDocument, options);
+}
 export function useAccountUndelegationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AccountUndelegationsQuery, AccountUndelegationsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AccountUndelegationsQuery, AccountUndelegationsQueryVariables>(AccountUndelegationsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AccountUndelegationsQuery, AccountUndelegationsQueryVariables>(AccountUndelegationsDocument, options);
+}
 export type AccountUndelegationsQueryHookResult = ReturnType<typeof useAccountUndelegationsQuery>;
 export type AccountUndelegationsLazyQueryHookResult = ReturnType<typeof useAccountUndelegationsLazyQuery>;
 export type AccountUndelegationsQueryResult = Apollo.QueryResult<AccountUndelegationsQuery, AccountUndelegationsQueryVariables>;
@@ -12484,13 +12633,13 @@ export const ActiveValidatorCountDocument = gql`
  * });
  */
 export function useActiveValidatorCountQuery(baseOptions?: Apollo.QueryHookOptions<ActiveValidatorCountQuery, ActiveValidatorCountQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ActiveValidatorCountQuery, ActiveValidatorCountQueryVariables>(ActiveValidatorCountDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ActiveValidatorCountQuery, ActiveValidatorCountQueryVariables>(ActiveValidatorCountDocument, options);
+}
 export function useActiveValidatorCountLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ActiveValidatorCountQuery, ActiveValidatorCountQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ActiveValidatorCountQuery, ActiveValidatorCountQueryVariables>(ActiveValidatorCountDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ActiveValidatorCountQuery, ActiveValidatorCountQueryVariables>(ActiveValidatorCountDocument, options);
+}
 export type ActiveValidatorCountQueryHookResult = ReturnType<typeof useActiveValidatorCountQuery>;
 export type ActiveValidatorCountLazyQueryHookResult = ReturnType<typeof useActiveValidatorCountLazyQuery>;
 export type ActiveValidatorCountQueryResult = Apollo.QueryResult<ActiveValidatorCountQuery, ActiveValidatorCountQueryVariables>;
@@ -12551,13 +12700,13 @@ export const BlockDetailsDocument = gql`
  * });
  */
 export function useBlockDetailsQuery(baseOptions?: Apollo.QueryHookOptions<BlockDetailsQuery, BlockDetailsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<BlockDetailsQuery, BlockDetailsQueryVariables>(BlockDetailsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<BlockDetailsQuery, BlockDetailsQueryVariables>(BlockDetailsDocument, options);
+}
 export function useBlockDetailsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<BlockDetailsQuery, BlockDetailsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<BlockDetailsQuery, BlockDetailsQueryVariables>(BlockDetailsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<BlockDetailsQuery, BlockDetailsQueryVariables>(BlockDetailsDocument, options);
+}
 export type BlockDetailsQueryHookResult = ReturnType<typeof useBlockDetailsQuery>;
 export type BlockDetailsLazyQueryHookResult = ReturnType<typeof useBlockDetailsLazyQuery>;
 export type BlockDetailsQueryResult = Apollo.QueryResult<BlockDetailsQuery, BlockDetailsQueryVariables>;
@@ -12586,9 +12735,9 @@ export const LatestBlockHeightListenerDocument = gql`
  * });
  */
 export function useLatestBlockHeightListenerSubscription(baseOptions?: Apollo.SubscriptionHookOptions<LatestBlockHeightListenerSubscription, LatestBlockHeightListenerSubscriptionVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useSubscription<LatestBlockHeightListenerSubscription, LatestBlockHeightListenerSubscriptionVariables>(LatestBlockHeightListenerDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useSubscription<LatestBlockHeightListenerSubscription, LatestBlockHeightListenerSubscriptionVariables>(LatestBlockHeightListenerDocument, options);
+}
 export type LatestBlockHeightListenerSubscriptionHookResult = ReturnType<typeof useLatestBlockHeightListenerSubscription>;
 export type LatestBlockHeightListenerSubscriptionResult = Apollo.SubscriptionResult<LatestBlockHeightListenerSubscription>;
 export const AverageBlockTimeDocument = gql`
@@ -12618,13 +12767,13 @@ export const AverageBlockTimeDocument = gql`
  * });
  */
 export function useAverageBlockTimeQuery(baseOptions?: Apollo.QueryHookOptions<AverageBlockTimeQuery, AverageBlockTimeQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<AverageBlockTimeQuery, AverageBlockTimeQueryVariables>(AverageBlockTimeDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<AverageBlockTimeQuery, AverageBlockTimeQueryVariables>(AverageBlockTimeDocument, options);
+}
 export function useAverageBlockTimeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<AverageBlockTimeQuery, AverageBlockTimeQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<AverageBlockTimeQuery, AverageBlockTimeQueryVariables>(AverageBlockTimeDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<AverageBlockTimeQuery, AverageBlockTimeQueryVariables>(AverageBlockTimeDocument, options);
+}
 export type AverageBlockTimeQueryHookResult = ReturnType<typeof useAverageBlockTimeQuery>;
 export type AverageBlockTimeLazyQueryHookResult = ReturnType<typeof useAverageBlockTimeLazyQuery>;
 export type AverageBlockTimeQueryResult = Apollo.QueryResult<AverageBlockTimeQuery, AverageBlockTimeQueryVariables>;
@@ -12653,13 +12802,13 @@ export const LatestBlockTimestampDocument = gql`
  * });
  */
 export function useLatestBlockTimestampQuery(baseOptions?: Apollo.QueryHookOptions<LatestBlockTimestampQuery, LatestBlockTimestampQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<LatestBlockTimestampQuery, LatestBlockTimestampQueryVariables>(LatestBlockTimestampDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<LatestBlockTimestampQuery, LatestBlockTimestampQueryVariables>(LatestBlockTimestampDocument, options);
+}
 export function useLatestBlockTimestampLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LatestBlockTimestampQuery, LatestBlockTimestampQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<LatestBlockTimestampQuery, LatestBlockTimestampQueryVariables>(LatestBlockTimestampDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<LatestBlockTimestampQuery, LatestBlockTimestampQueryVariables>(LatestBlockTimestampDocument, options);
+}
 export type LatestBlockTimestampQueryHookResult = ReturnType<typeof useLatestBlockTimestampQuery>;
 export type LatestBlockTimestampLazyQueryHookResult = ReturnType<typeof useLatestBlockTimestampLazyQuery>;
 export type LatestBlockTimestampQueryResult = Apollo.QueryResult<LatestBlockTimestampQuery, LatestBlockTimestampQueryVariables>;
@@ -12697,9 +12846,9 @@ export const BlocksListenerDocument = gql`
  * });
  */
 export function useBlocksListenerSubscription(baseOptions?: Apollo.SubscriptionHookOptions<BlocksListenerSubscription, BlocksListenerSubscriptionVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useSubscription<BlocksListenerSubscription, BlocksListenerSubscriptionVariables>(BlocksListenerDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useSubscription<BlocksListenerSubscription, BlocksListenerSubscriptionVariables>(BlocksListenerDocument, options);
+}
 export type BlocksListenerSubscriptionHookResult = ReturnType<typeof useBlocksListenerSubscription>;
 export type BlocksListenerSubscriptionResult = Apollo.SubscriptionResult<BlocksListenerSubscription>;
 export const BlocksDocument = gql`
@@ -12744,13 +12893,13 @@ export const BlocksDocument = gql`
  * });
  */
 export function useBlocksQuery(baseOptions?: Apollo.QueryHookOptions<BlocksQuery, BlocksQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<BlocksQuery, BlocksQueryVariables>(BlocksDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<BlocksQuery, BlocksQueryVariables>(BlocksDocument, options);
+}
 export function useBlocksLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<BlocksQuery, BlocksQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<BlocksQuery, BlocksQueryVariables>(BlocksDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<BlocksQuery, BlocksQueryVariables>(BlocksDocument, options);
+}
 export type BlocksQueryHookResult = ReturnType<typeof useBlocksQuery>;
 export type BlocksLazyQueryHookResult = ReturnType<typeof useBlocksLazyQuery>;
 export type BlocksQueryResult = Apollo.QueryResult<BlocksQuery, BlocksQueryVariables>;
@@ -12779,13 +12928,13 @@ export const ChainIdDocument = gql`
  * });
  */
 export function useChainIdQuery(baseOptions?: Apollo.QueryHookOptions<ChainIdQuery, ChainIdQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ChainIdQuery, ChainIdQueryVariables>(ChainIdDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ChainIdQuery, ChainIdQueryVariables>(ChainIdDocument, options);
+}
 export function useChainIdLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ChainIdQuery, ChainIdQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ChainIdQuery, ChainIdQueryVariables>(ChainIdDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ChainIdQuery, ChainIdQueryVariables>(ChainIdDocument, options);
+}
 export type ChainIdQueryHookResult = ReturnType<typeof useChainIdQuery>;
 export type ChainIdLazyQueryHookResult = ReturnType<typeof useChainIdLazyQuery>;
 export type ChainIdQueryResult = Apollo.QueryResult<ChainIdQuery, ChainIdQueryVariables>;
@@ -12830,13 +12979,13 @@ export const MarketDataDocument = gql`
  * });
  */
 export function useMarketDataQuery(baseOptions?: Apollo.QueryHookOptions<MarketDataQuery, MarketDataQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<MarketDataQuery, MarketDataQueryVariables>(MarketDataDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<MarketDataQuery, MarketDataQueryVariables>(MarketDataDocument, options);
+}
 export function useMarketDataLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MarketDataQuery, MarketDataQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<MarketDataQuery, MarketDataQueryVariables>(MarketDataDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<MarketDataQuery, MarketDataQueryVariables>(MarketDataDocument, options);
+}
 export type MarketDataQueryHookResult = ReturnType<typeof useMarketDataQuery>;
 export type MarketDataLazyQueryHookResult = ReturnType<typeof useMarketDataLazyQuery>;
 export type MarketDataQueryResult = Apollo.QueryResult<MarketDataQuery, MarketDataQueryVariables>;
@@ -12880,13 +13029,13 @@ export const GetMessagesByAddressDocument = gql`
  * });
  */
 export function useGetMessagesByAddressQuery(baseOptions?: Apollo.QueryHookOptions<GetMessagesByAddressQuery, GetMessagesByAddressQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetMessagesByAddressQuery, GetMessagesByAddressQueryVariables>(GetMessagesByAddressDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<GetMessagesByAddressQuery, GetMessagesByAddressQueryVariables>(GetMessagesByAddressDocument, options);
+}
 export function useGetMessagesByAddressLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMessagesByAddressQuery, GetMessagesByAddressQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetMessagesByAddressQuery, GetMessagesByAddressQueryVariables>(GetMessagesByAddressDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<GetMessagesByAddressQuery, GetMessagesByAddressQueryVariables>(GetMessagesByAddressDocument, options);
+}
 export type GetMessagesByAddressQueryHookResult = ReturnType<typeof useGetMessagesByAddressQuery>;
 export type GetMessagesByAddressLazyQueryHookResult = ReturnType<typeof useGetMessagesByAddressLazyQuery>;
 export type GetMessagesByAddressQueryResult = Apollo.QueryResult<GetMessagesByAddressQuery, GetMessagesByAddressQueryVariables>;
@@ -12931,13 +13080,13 @@ export const OnlineVotingPowerDocument = gql`
  * });
  */
 export function useOnlineVotingPowerQuery(baseOptions?: Apollo.QueryHookOptions<OnlineVotingPowerQuery, OnlineVotingPowerQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<OnlineVotingPowerQuery, OnlineVotingPowerQueryVariables>(OnlineVotingPowerDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<OnlineVotingPowerQuery, OnlineVotingPowerQueryVariables>(OnlineVotingPowerDocument, options);
+}
 export function useOnlineVotingPowerLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<OnlineVotingPowerQuery, OnlineVotingPowerQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<OnlineVotingPowerQuery, OnlineVotingPowerQueryVariables>(OnlineVotingPowerDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<OnlineVotingPowerQuery, OnlineVotingPowerQueryVariables>(OnlineVotingPowerDocument, options);
+}
 export type OnlineVotingPowerQueryHookResult = ReturnType<typeof useOnlineVotingPowerQuery>;
 export type OnlineVotingPowerLazyQueryHookResult = ReturnType<typeof useOnlineVotingPowerLazyQuery>;
 export type OnlineVotingPowerQueryResult = Apollo.QueryResult<OnlineVotingPowerQuery, OnlineVotingPowerQueryVariables>;
@@ -12979,13 +13128,13 @@ export const ParamsDocument = gql`
  * });
  */
 export function useParamsQuery(baseOptions?: Apollo.QueryHookOptions<ParamsQuery, ParamsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ParamsQuery, ParamsQueryVariables>(ParamsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ParamsQuery, ParamsQueryVariables>(ParamsDocument, options);
+}
 export function useParamsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ParamsQuery, ParamsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ParamsQuery, ParamsQueryVariables>(ParamsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ParamsQuery, ParamsQueryVariables>(ParamsDocument, options);
+}
 export type ParamsQueryHookResult = ReturnType<typeof useParamsQuery>;
 export type ParamsLazyQueryHookResult = ReturnType<typeof useParamsLazyQuery>;
 export type ParamsQueryResult = Apollo.QueryResult<ParamsQuery, ParamsQueryVariables>;
@@ -13023,13 +13172,13 @@ export const ProposalDetailsDocument = gql`
  * });
  */
 export function useProposalDetailsQuery(baseOptions?: Apollo.QueryHookOptions<ProposalDetailsQuery, ProposalDetailsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ProposalDetailsQuery, ProposalDetailsQueryVariables>(ProposalDetailsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ProposalDetailsQuery, ProposalDetailsQueryVariables>(ProposalDetailsDocument, options);
+}
 export function useProposalDetailsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProposalDetailsQuery, ProposalDetailsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ProposalDetailsQuery, ProposalDetailsQueryVariables>(ProposalDetailsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ProposalDetailsQuery, ProposalDetailsQueryVariables>(ProposalDetailsDocument, options);
+}
 export type ProposalDetailsQueryHookResult = ReturnType<typeof useProposalDetailsQuery>;
 export type ProposalDetailsLazyQueryHookResult = ReturnType<typeof useProposalDetailsLazyQuery>;
 export type ProposalDetailsQueryResult = Apollo.QueryResult<ProposalDetailsQuery, ProposalDetailsQueryVariables>;
@@ -13071,13 +13220,13 @@ export const ProposalDetailsTallyDocument = gql`
  * });
  */
 export function useProposalDetailsTallyQuery(baseOptions?: Apollo.QueryHookOptions<ProposalDetailsTallyQuery, ProposalDetailsTallyQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ProposalDetailsTallyQuery, ProposalDetailsTallyQueryVariables>(ProposalDetailsTallyDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ProposalDetailsTallyQuery, ProposalDetailsTallyQueryVariables>(ProposalDetailsTallyDocument, options);
+}
 export function useProposalDetailsTallyLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProposalDetailsTallyQuery, ProposalDetailsTallyQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ProposalDetailsTallyQuery, ProposalDetailsTallyQueryVariables>(ProposalDetailsTallyDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ProposalDetailsTallyQuery, ProposalDetailsTallyQueryVariables>(ProposalDetailsTallyDocument, options);
+}
 export type ProposalDetailsTallyQueryHookResult = ReturnType<typeof useProposalDetailsTallyQuery>;
 export type ProposalDetailsTallyLazyQueryHookResult = ReturnType<typeof useProposalDetailsTallyLazyQuery>;
 export type ProposalDetailsTallyQueryResult = Apollo.QueryResult<ProposalDetailsTallyQuery, ProposalDetailsTallyQueryVariables>;
@@ -13113,13 +13262,13 @@ export const ProposalDetailsDepositsDocument = gql`
  * });
  */
 export function useProposalDetailsDepositsQuery(baseOptions?: Apollo.QueryHookOptions<ProposalDetailsDepositsQuery, ProposalDetailsDepositsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ProposalDetailsDepositsQuery, ProposalDetailsDepositsQueryVariables>(ProposalDetailsDepositsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ProposalDetailsDepositsQuery, ProposalDetailsDepositsQueryVariables>(ProposalDetailsDepositsDocument, options);
+}
 export function useProposalDetailsDepositsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProposalDetailsDepositsQuery, ProposalDetailsDepositsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ProposalDetailsDepositsQuery, ProposalDetailsDepositsQueryVariables>(ProposalDetailsDepositsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ProposalDetailsDepositsQuery, ProposalDetailsDepositsQueryVariables>(ProposalDetailsDepositsDocument, options);
+}
 export type ProposalDetailsDepositsQueryHookResult = ReturnType<typeof useProposalDetailsDepositsQuery>;
 export type ProposalDetailsDepositsLazyQueryHookResult = ReturnType<typeof useProposalDetailsDepositsLazyQuery>;
 export type ProposalDetailsDepositsQueryResult = Apollo.QueryResult<ProposalDetailsDepositsQuery, ProposalDetailsDepositsQueryVariables>;
@@ -13161,13 +13310,13 @@ export const ProposalDetailsVotesDocument = gql`
  * });
  */
 export function useProposalDetailsVotesQuery(baseOptions?: Apollo.QueryHookOptions<ProposalDetailsVotesQuery, ProposalDetailsVotesQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ProposalDetailsVotesQuery, ProposalDetailsVotesQueryVariables>(ProposalDetailsVotesDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ProposalDetailsVotesQuery, ProposalDetailsVotesQueryVariables>(ProposalDetailsVotesDocument, options);
+}
 export function useProposalDetailsVotesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProposalDetailsVotesQuery, ProposalDetailsVotesQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ProposalDetailsVotesQuery, ProposalDetailsVotesQueryVariables>(ProposalDetailsVotesDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ProposalDetailsVotesQuery, ProposalDetailsVotesQueryVariables>(ProposalDetailsVotesDocument, options);
+}
 export type ProposalDetailsVotesQueryHookResult = ReturnType<typeof useProposalDetailsVotesQuery>;
 export type ProposalDetailsVotesLazyQueryHookResult = ReturnType<typeof useProposalDetailsVotesLazyQuery>;
 export type ProposalDetailsVotesQueryResult = Apollo.QueryResult<ProposalDetailsVotesQuery, ProposalDetailsVotesQueryVariables>;
@@ -13205,13 +13354,13 @@ export const ProposalsDocument = gql`
  * });
  */
 export function useProposalsQuery(baseOptions?: Apollo.QueryHookOptions<ProposalsQuery, ProposalsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ProposalsQuery, ProposalsQueryVariables>(ProposalsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ProposalsQuery, ProposalsQueryVariables>(ProposalsDocument, options);
+}
 export function useProposalsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ProposalsQuery, ProposalsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ProposalsQuery, ProposalsQueryVariables>(ProposalsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ProposalsQuery, ProposalsQueryVariables>(ProposalsDocument, options);
+}
 export type ProposalsQueryHookResult = ReturnType<typeof useProposalsQuery>;
 export type ProposalsLazyQueryHookResult = ReturnType<typeof useProposalsLazyQuery>;
 export type ProposalsQueryResult = Apollo.QueryResult<ProposalsQuery, ProposalsQueryVariables>;
@@ -13244,9 +13393,9 @@ export const TokenPriceListenerDocument = gql`
  * });
  */
 export function useTokenPriceListenerSubscription(baseOptions?: Apollo.SubscriptionHookOptions<TokenPriceListenerSubscription, TokenPriceListenerSubscriptionVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useSubscription<TokenPriceListenerSubscription, TokenPriceListenerSubscriptionVariables>(TokenPriceListenerDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useSubscription<TokenPriceListenerSubscription, TokenPriceListenerSubscriptionVariables>(TokenPriceListenerDocument, options);
+}
 export type TokenPriceListenerSubscriptionHookResult = ReturnType<typeof useTokenPriceListenerSubscription>;
 export type TokenPriceListenerSubscriptionResult = Apollo.SubscriptionResult<TokenPriceListenerSubscription>;
 export const TokenPriceHistoryDocument = gql`
@@ -13280,13 +13429,13 @@ export const TokenPriceHistoryDocument = gql`
  * });
  */
 export function useTokenPriceHistoryQuery(baseOptions?: Apollo.QueryHookOptions<TokenPriceHistoryQuery, TokenPriceHistoryQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<TokenPriceHistoryQuery, TokenPriceHistoryQueryVariables>(TokenPriceHistoryDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TokenPriceHistoryQuery, TokenPriceHistoryQueryVariables>(TokenPriceHistoryDocument, options);
+}
 export function useTokenPriceHistoryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<TokenPriceHistoryQuery, TokenPriceHistoryQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<TokenPriceHistoryQuery, TokenPriceHistoryQueryVariables>(TokenPriceHistoryDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TokenPriceHistoryQuery, TokenPriceHistoryQueryVariables>(TokenPriceHistoryDocument, options);
+}
 export type TokenPriceHistoryQueryHookResult = ReturnType<typeof useTokenPriceHistoryQuery>;
 export type TokenPriceHistoryLazyQueryHookResult = ReturnType<typeof useTokenPriceHistoryLazyQuery>;
 export type TokenPriceHistoryQueryResult = Apollo.QueryResult<TokenPriceHistoryQuery, TokenPriceHistoryQueryVariables>;
@@ -13321,13 +13470,13 @@ export const TokenomicsDocument = gql`
  * });
  */
 export function useTokenomicsQuery(baseOptions?: Apollo.QueryHookOptions<TokenomicsQuery, TokenomicsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<TokenomicsQuery, TokenomicsQueryVariables>(TokenomicsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TokenomicsQuery, TokenomicsQueryVariables>(TokenomicsDocument, options);
+}
 export function useTokenomicsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<TokenomicsQuery, TokenomicsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<TokenomicsQuery, TokenomicsQueryVariables>(TokenomicsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TokenomicsQuery, TokenomicsQueryVariables>(TokenomicsDocument, options);
+}
 export type TokenomicsQueryHookResult = ReturnType<typeof useTokenomicsQuery>;
 export type TokenomicsLazyQueryHookResult = ReturnType<typeof useTokenomicsLazyQuery>;
 export type TokenomicsQueryResult = Apollo.QueryResult<TokenomicsQuery, TokenomicsQueryVariables>;
@@ -13368,13 +13517,13 @@ export const TransactionDetailsDocument = gql`
  * });
  */
 export function useTransactionDetailsQuery(baseOptions?: Apollo.QueryHookOptions<TransactionDetailsQuery, TransactionDetailsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<TransactionDetailsQuery, TransactionDetailsQueryVariables>(TransactionDetailsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TransactionDetailsQuery, TransactionDetailsQueryVariables>(TransactionDetailsDocument, options);
+}
 export function useTransactionDetailsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<TransactionDetailsQuery, TransactionDetailsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<TransactionDetailsQuery, TransactionDetailsQueryVariables>(TransactionDetailsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TransactionDetailsQuery, TransactionDetailsQueryVariables>(TransactionDetailsDocument, options);
+}
 export type TransactionDetailsQueryHookResult = ReturnType<typeof useTransactionDetailsQuery>;
 export type TransactionDetailsLazyQueryHookResult = ReturnType<typeof useTransactionDetailsLazyQuery>;
 export type TransactionDetailsQueryResult = Apollo.QueryResult<TransactionDetailsQuery, TransactionDetailsQueryVariables>;
@@ -13415,9 +13564,9 @@ export const TransactionsListenerDocument = gql`
  * });
  */
 export function useTransactionsListenerSubscription(baseOptions?: Apollo.SubscriptionHookOptions<TransactionsListenerSubscription, TransactionsListenerSubscriptionVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useSubscription<TransactionsListenerSubscription, TransactionsListenerSubscriptionVariables>(TransactionsListenerDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useSubscription<TransactionsListenerSubscription, TransactionsListenerSubscriptionVariables>(TransactionsListenerDocument, options);
+}
 export type TransactionsListenerSubscriptionHookResult = ReturnType<typeof useTransactionsListenerSubscription>;
 export type TransactionsListenerSubscriptionResult = Apollo.SubscriptionResult<TransactionsListenerSubscription>;
 export const TransactionsDocument = gql`
@@ -13457,13 +13606,13 @@ export const TransactionsDocument = gql`
  * });
  */
 export function useTransactionsQuery(baseOptions?: Apollo.QueryHookOptions<TransactionsQuery, TransactionsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<TransactionsQuery, TransactionsQueryVariables>(TransactionsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<TransactionsQuery, TransactionsQueryVariables>(TransactionsDocument, options);
+}
 export function useTransactionsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<TransactionsQuery, TransactionsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<TransactionsQuery, TransactionsQueryVariables>(TransactionsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<TransactionsQuery, TransactionsQueryVariables>(TransactionsDocument, options);
+}
 export type TransactionsQueryHookResult = ReturnType<typeof useTransactionsQuery>;
 export type TransactionsLazyQueryHookResult = ReturnType<typeof useTransactionsLazyQuery>;
 export type TransactionsQueryResult = Apollo.QueryResult<TransactionsQuery, TransactionsQueryVariables>;
@@ -13505,9 +13654,9 @@ export const LastHundredBlocksDocument = gql`
  * });
  */
 export function useLastHundredBlocksSubscription(baseOptions?: Apollo.SubscriptionHookOptions<LastHundredBlocksSubscription, LastHundredBlocksSubscriptionVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useSubscription<LastHundredBlocksSubscription, LastHundredBlocksSubscriptionVariables>(LastHundredBlocksDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useSubscription<LastHundredBlocksSubscription, LastHundredBlocksSubscriptionVariables>(LastHundredBlocksDocument, options);
+}
 export type LastHundredBlocksSubscriptionHookResult = ReturnType<typeof useLastHundredBlocksSubscription>;
 export type LastHundredBlocksSubscriptionResult = Apollo.SubscriptionResult<LastHundredBlocksSubscription>;
 export const ValidatorLastSeenListenerDocument = gql`
@@ -13540,9 +13689,9 @@ export const ValidatorLastSeenListenerDocument = gql`
  * });
  */
 export function useValidatorLastSeenListenerSubscription(baseOptions?: Apollo.SubscriptionHookOptions<ValidatorLastSeenListenerSubscription, ValidatorLastSeenListenerSubscriptionVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useSubscription<ValidatorLastSeenListenerSubscription, ValidatorLastSeenListenerSubscriptionVariables>(ValidatorLastSeenListenerDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useSubscription<ValidatorLastSeenListenerSubscription, ValidatorLastSeenListenerSubscriptionVariables>(ValidatorLastSeenListenerDocument, options);
+}
 export type ValidatorLastSeenListenerSubscriptionHookResult = ReturnType<typeof useValidatorLastSeenListenerSubscription>;
 export type ValidatorLastSeenListenerSubscriptionResult = Apollo.SubscriptionResult<ValidatorLastSeenListenerSubscription>;
 export const ValidatorDetailsDocument = gql`
@@ -13611,13 +13760,13 @@ export const ValidatorDetailsDocument = gql`
  * });
  */
 export function useValidatorDetailsQuery(baseOptions?: Apollo.QueryHookOptions<ValidatorDetailsQuery, ValidatorDetailsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ValidatorDetailsQuery, ValidatorDetailsQueryVariables>(ValidatorDetailsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ValidatorDetailsQuery, ValidatorDetailsQueryVariables>(ValidatorDetailsDocument, options);
+}
 export function useValidatorDetailsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ValidatorDetailsQuery, ValidatorDetailsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ValidatorDetailsQuery, ValidatorDetailsQueryVariables>(ValidatorDetailsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ValidatorDetailsQuery, ValidatorDetailsQueryVariables>(ValidatorDetailsDocument, options);
+}
 export type ValidatorDetailsQueryHookResult = ReturnType<typeof useValidatorDetailsQuery>;
 export type ValidatorDetailsLazyQueryHookResult = ReturnType<typeof useValidatorDetailsLazyQuery>;
 export type ValidatorDetailsQueryResult = Apollo.QueryResult<ValidatorDetailsQuery, ValidatorDetailsQueryVariables>;
@@ -13655,13 +13804,13 @@ export const ValidatorDelegationsDocument = gql`
  * });
  */
 export function useValidatorDelegationsQuery(baseOptions: Apollo.QueryHookOptions<ValidatorDelegationsQuery, ValidatorDelegationsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ValidatorDelegationsQuery, ValidatorDelegationsQueryVariables>(ValidatorDelegationsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ValidatorDelegationsQuery, ValidatorDelegationsQueryVariables>(ValidatorDelegationsDocument, options);
+}
 export function useValidatorDelegationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ValidatorDelegationsQuery, ValidatorDelegationsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ValidatorDelegationsQuery, ValidatorDelegationsQueryVariables>(ValidatorDelegationsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ValidatorDelegationsQuery, ValidatorDelegationsQueryVariables>(ValidatorDelegationsDocument, options);
+}
 export type ValidatorDelegationsQueryHookResult = ReturnType<typeof useValidatorDelegationsQuery>;
 export type ValidatorDelegationsLazyQueryHookResult = ReturnType<typeof useValidatorDelegationsLazyQuery>;
 export type ValidatorDelegationsQueryResult = Apollo.QueryResult<ValidatorDelegationsQuery, ValidatorDelegationsQueryVariables>;
@@ -13699,13 +13848,13 @@ export const ValidatorRedelegationsDocument = gql`
  * });
  */
 export function useValidatorRedelegationsQuery(baseOptions: Apollo.QueryHookOptions<ValidatorRedelegationsQuery, ValidatorRedelegationsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ValidatorRedelegationsQuery, ValidatorRedelegationsQueryVariables>(ValidatorRedelegationsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ValidatorRedelegationsQuery, ValidatorRedelegationsQueryVariables>(ValidatorRedelegationsDocument, options);
+}
 export function useValidatorRedelegationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ValidatorRedelegationsQuery, ValidatorRedelegationsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ValidatorRedelegationsQuery, ValidatorRedelegationsQueryVariables>(ValidatorRedelegationsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ValidatorRedelegationsQuery, ValidatorRedelegationsQueryVariables>(ValidatorRedelegationsDocument, options);
+}
 export type ValidatorRedelegationsQueryHookResult = ReturnType<typeof useValidatorRedelegationsQuery>;
 export type ValidatorRedelegationsLazyQueryHookResult = ReturnType<typeof useValidatorRedelegationsLazyQuery>;
 export type ValidatorRedelegationsQueryResult = Apollo.QueryResult<ValidatorRedelegationsQuery, ValidatorRedelegationsQueryVariables>;
@@ -13743,53 +13892,55 @@ export const ValidatorUndelegationsDocument = gql`
  * });
  */
 export function useValidatorUndelegationsQuery(baseOptions: Apollo.QueryHookOptions<ValidatorUndelegationsQuery, ValidatorUndelegationsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ValidatorUndelegationsQuery, ValidatorUndelegationsQueryVariables>(ValidatorUndelegationsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ValidatorUndelegationsQuery, ValidatorUndelegationsQueryVariables>(ValidatorUndelegationsDocument, options);
+}
 export function useValidatorUndelegationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ValidatorUndelegationsQuery, ValidatorUndelegationsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ValidatorUndelegationsQuery, ValidatorUndelegationsQueryVariables>(ValidatorUndelegationsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ValidatorUndelegationsQuery, ValidatorUndelegationsQueryVariables>(ValidatorUndelegationsDocument, options);
+}
 export type ValidatorUndelegationsQueryHookResult = ReturnType<typeof useValidatorUndelegationsQuery>;
 export type ValidatorUndelegationsLazyQueryHookResult = ReturnType<typeof useValidatorUndelegationsLazyQuery>;
 export type ValidatorUndelegationsQueryResult = Apollo.QueryResult<ValidatorUndelegationsQuery, ValidatorUndelegationsQueryVariables>;
 export const ValidatorsDocument = gql`
-    query Validators {
+query Validators {
   stakingPool: staking_pool(limit: 1, order_by: {height: desc}) {
     bondedTokens: bonded_tokens
   }
-  validator {
-    validatorStatuses: validator_statuses(order_by: {height: desc}, limit: 1) {
-      status
-      jailed
-      height
-    }
-    validatorSigningInfos: validator_signing_infos(
-      order_by: {height: desc}
-      limit: 1
-    ) {
-      missedBlocksCounter: missed_blocks_counter
-      tombstoned
-    }
-    validatorInfo: validator_info {
-      operatorAddress: operator_address
-      selfDelegateAddress: self_delegate_address
-    }
-    validatorVotingPowers: validator_voting_powers(
-      offset: 0
-      limit: 1
-      order_by: {height: desc}
-    ) {
-      votingPower: voting_power
-    }
-    validatorCommissions: validator_commissions(order_by: {height: desc}, limit: 1) {
-      commission
-    }
-    validatorSigningInfos: validator_signing_infos(
-      order_by: {height: desc}
-      limit: 1
-    ) {
-      missedBlocksCounter: missed_blocks_counter
+  list: validator_status(order_by: {jailed: asc, status: desc}, limit: 100) {
+    validator {
+      validatorStatuses: validator_statuses(order_by: {height: desc}, limit: 1) {
+        status
+        jailed
+        height
+      }
+      validatorSigningInfos: validator_signing_infos(
+        order_by: {height: desc}
+        limit: 1
+      ) {
+        missedBlocksCounter: missed_blocks_counter
+        tombstoned
+      }
+      validatorInfo: validator_info {
+        operatorAddress: operator_address
+        selfDelegateAddress: self_delegate_address
+      }
+      validatorVotingPowers: validator_voting_powers(
+        offset: 0
+        limit: 1
+        order_by: {height: desc}
+      ) {
+        votingPower: voting_power
+      }
+      validatorCommissions: validator_commissions(order_by: {height: desc}, limit: 1) {
+        commission
+      }
+      validatorSigningInfos: validator_signing_infos(
+        order_by: {height: desc}
+        limit: 1
+      ) {
+        missedBlocksCounter: missed_blocks_counter
+      }
     }
   }
   slashingParams: slashing_params(order_by: {height: desc}, limit: 1) {
@@ -13814,13 +13965,13 @@ export const ValidatorsDocument = gql`
  * });
  */
 export function useValidatorsQuery(baseOptions?: Apollo.QueryHookOptions<ValidatorsQuery, ValidatorsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ValidatorsQuery, ValidatorsQueryVariables>(ValidatorsDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ValidatorsQuery, ValidatorsQueryVariables>(ValidatorsDocument, options);
+}
 export function useValidatorsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ValidatorsQuery, ValidatorsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ValidatorsQuery, ValidatorsQueryVariables>(ValidatorsDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ValidatorsQuery, ValidatorsQueryVariables>(ValidatorsDocument, options);
+}
 export type ValidatorsQueryHookResult = ReturnType<typeof useValidatorsQuery>;
 export type ValidatorsLazyQueryHookResult = ReturnType<typeof useValidatorsLazyQuery>;
 export type ValidatorsQueryResult = Apollo.QueryResult<ValidatorsQuery, ValidatorsQueryVariables>;
@@ -13860,13 +14011,13 @@ export const ValidatorsAddressListDocument = gql`
  * });
  */
 export function useValidatorsAddressListQuery(baseOptions?: Apollo.QueryHookOptions<ValidatorsAddressListQuery, ValidatorsAddressListQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ValidatorsAddressListQuery, ValidatorsAddressListQueryVariables>(ValidatorsAddressListDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ValidatorsAddressListQuery, ValidatorsAddressListQueryVariables>(ValidatorsAddressListDocument, options);
+}
 export function useValidatorsAddressListLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ValidatorsAddressListQuery, ValidatorsAddressListQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ValidatorsAddressListQuery, ValidatorsAddressListQueryVariables>(ValidatorsAddressListDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ValidatorsAddressListQuery, ValidatorsAddressListQueryVariables>(ValidatorsAddressListDocument, options);
+}
 export type ValidatorsAddressListQueryHookResult = ReturnType<typeof useValidatorsAddressListQuery>;
 export type ValidatorsAddressListLazyQueryHookResult = ReturnType<typeof useValidatorsAddressListLazyQuery>;
 export type ValidatorsAddressListQueryResult = Apollo.QueryResult<ValidatorsAddressListQuery, ValidatorsAddressListQueryVariables>;
@@ -13907,13 +14058,13 @@ export const ValidatorAddressesDocument = gql`
  * });
  */
 export function useValidatorAddressesQuery(baseOptions?: Apollo.QueryHookOptions<ValidatorAddressesQuery, ValidatorAddressesQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<ValidatorAddressesQuery, ValidatorAddressesQueryVariables>(ValidatorAddressesDocument, options);
-      }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useQuery<ValidatorAddressesQuery, ValidatorAddressesQueryVariables>(ValidatorAddressesDocument, options);
+}
 export function useValidatorAddressesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ValidatorAddressesQuery, ValidatorAddressesQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<ValidatorAddressesQuery, ValidatorAddressesQueryVariables>(ValidatorAddressesDocument, options);
-        }
+  const options = { ...defaultOptions, ...baseOptions }
+  return Apollo.useLazyQuery<ValidatorAddressesQuery, ValidatorAddressesQueryVariables>(ValidatorAddressesDocument, options);
+}
 export type ValidatorAddressesQueryHookResult = ReturnType<typeof useValidatorAddressesQuery>;
 export type ValidatorAddressesLazyQueryHookResult = ReturnType<typeof useValidatorAddressesLazyQuery>;
 export type ValidatorAddressesQueryResult = Apollo.QueryResult<ValidatorAddressesQuery, ValidatorAddressesQueryVariables>;

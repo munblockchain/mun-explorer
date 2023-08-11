@@ -104,9 +104,7 @@ const Footer: React.FC<{className?: string}> = ({ className }) => {
               (
                 // eslint-disable-next-line
                 <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://raw.githubusercontent.com/forbole/big-dipper-2.0-cosmos/master/LICENSE"
+                  href=""
                 />
               ),
             ]}

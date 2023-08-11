@@ -1,9 +1,13 @@
-const FORBOLE_URL = 'https://www.forbole.com';
+const MUN_URL = 'https://mun.money/';
+const MUN_STAKING_URL = 'https://staking.mun.money/';
+const MUN_MEDIUM_URL = 'https://medium.com/@munblockchain';
+const MUN_TG_URL = 'https://t.me/munblockchain';
+
 const BIG_DIPPER_URL = 'https://bigdipper.live';
 
 export const donateLink = {
   key: 'donate',
-  url: `${BIG_DIPPER_URL}/donate`,
+  url: '',
 };
 
 export const footerLinks = [
@@ -11,20 +15,20 @@ export const footerLinks = [
     key: 'company',
     links: [
       {
-        key: 'forbole',
-        url: FORBOLE_URL,
+        key: 'mun',
+        url: MUN_URL,
       },
       {
         key: 'stakeNow',
-        url: `${FORBOLE_URL}/stake-now`,
+        url: MUN_STAKING_URL,
       },
       {
         key: 'contact',
-        url: `${FORBOLE_URL}/contact`,
+        url: MUN_TG_URL,
       },
       {
         key: 'blog',
-        url: `${FORBOLE_URL}/blog`,
+        url: MUN_MEDIUM_URL,
       },
     ],
   },

@@ -4,6 +4,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
   GithubIcon,
+  DiscordIcon,
 } from '@icons';
 
 export const socialMediaLinks:{
@@ -14,21 +15,21 @@ export const socialMediaLinks:{
   {
     component: <TelegramIcon />,
     className: 'telegram',
-    url: 'https://t.me/forbole',
+    url: 'https://t.me/munchain',
   },
   {
-    component: <LinkedinIcon />,
+    component: <DiscordIcon />,
     className: 'linkedin',
-    url: 'https://www.linkedin.com/company/forbole',
+    url: 'https://dsc.gg/munmoney',
   },
   {
     component: <TwitterIcon />,
     className: 'twitter',
-    url: 'https://twitter.com/bigdipperlive',
+    url: 'https://twitter.com/munblockchain',
   },
   {
     component: <GithubIcon />,
     className: 'github',
-    url: 'https://github.com/forbole',
+    url: 'https://github.com/munblockchain',
   },
 ];

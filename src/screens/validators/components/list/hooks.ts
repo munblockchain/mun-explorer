@@ -56,22 +56,22 @@ export const useValidators = () => {
 
     const { signedBlockWindow } = slashingParams;
 
-    let formattedItems: ValidatorType[] = data.validator.filter((x) => x.validatorInfo).map((x) => {
-      const votingPower = R.pathOr(0, ['validatorVotingPowers', 0, 'votingPower'], x);
+    let formattedItems: ValidatorType[] = data.list.filter((x) => x.validator.validatorInfo).map((x) => {
+      const votingPower = R.pathOr(0, ['validator', 'validatorVotingPowers', 0, 'votingPower'], x);
       const votingPowerPercent = numeral((votingPower / votingPowerOverall) * 100).value();
 
-      const missedBlockCounter = R.pathOr(0, ['validatorSigningInfos', 0, 'missedBlocksCounter'], x);
+      const missedBlockCounter = R.pathOr(0, ['validator', 'validatorSigningInfos', 0, 'missedBlocksCounter'], x);
       const condition = getValidatorCondition(signedBlockWindow, missedBlockCounter);
 
       return ({
-        validator: x.validatorInfo.operatorAddress,
+        validator: x.validator.validatorInfo.operatorAddress,
         votingPower,
         votingPowerPercent,
-        commission: R.pathOr(0, ['validatorCommissions', 0, 'commission'], x) * 100,
+        commission: R.pathOr(0, ['validator', 'validatorCommissions', 0, 'commission'], x) * 100,
         condition,
-        status: R.pathOr(0, ['validatorStatuses', 0, 'status'], x),
-        jailed: R.pathOr(false, ['validatorStatuses', 0, 'jailed'], x),
-        tombstoned: R.pathOr(false, ['validatorSigningInfos', 0, 'tombstoned'], x),
+        status: R.pathOr(0, ['validator', 'validatorStatuses', 0, 'status'], x),
+        jailed: R.pathOr(false, ['validator', 'validatorStatuses', 0, 'jailed'], x),
+        tombstoned: R.pathOr(false, ['validator', 'validatorSigningInfos', 0, 'tombstoned'], x),
       });
     });
 
